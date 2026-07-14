@@ -5,26 +5,19 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <section className="hero">
-        <div className="hero__stars">
-          <span style={{ top: "12%", left: "8%" }}>★</span>
-          <span style={{ top: "24%", left: "82%", animationDelay: ".6s" }}>✦</span>
-          <span style={{ top: "64%", left: "16%", animationDelay: "1.2s" }}>★</span>
-          <span style={{ top: "72%", left: "74%", animationDelay: ".9s" }}>✦</span>
-          <span style={{ top: "40%", left: "46%", animationDelay: "1.6s" }}>★</span>
-        </div>
-        <div className="hero__inner">
-          <p className="hero__philosophy">オモイをカタチに ―― 建築は統合芸術</p>
+        <div className="hero__bg" />
+        <div className="hero__scrim" />
+        <div className="hero__copy">
+          <p className="label label--line">Space Branding ／ Kitakyushu</p>
           <h1>
             女性力で、建設業界を
             <br />
-            <span className="mark">ぱーっと明るく</span>変えたいんです！
+            <em>ぱーっと明るく</em>。
           </h1>
-          <p className="hero__sub">
-            福岡・北九州から、女性視点の空間ブランディングで「お店の価値」を引き出し、魅力的にカタチにします。
-          </p>
+          <p className="hero__lead">オモイをカタチに ―― 建築は統合芸術。</p>
           <div className="hero__cta">
-            <Link className="btn" href="/branding">空間プロデュースを見る</Link>
-            <Link className="btn btn--ghost" href="/consulting">建築なんでも相談</Link>
+            <Link className="btn btn--light" href="/branding">空間プロデュースを見る</Link>
+            <Link className="btn btn--light" href="/works">施工実績を見る</Link>
           </div>
         </div>
       </section>
@@ -98,11 +91,21 @@ export default function Home() {
         </div>
         <div className="wrap mt-32">
           <div className="gallery">
-            {Array.from({ length: 8 }, (_, i) => (
-              <div className="ph" key={i}>{`実績 ${String(i + 1).padStart(2, "0")}`}</div>
+            {[
+              ["Store", "店舗デザイン"],
+              ["Residence", "住宅リノベーション"],
+              ["Office", "オフィス空間"],
+              ["Branding", "空間ブランディング"],
+              ["Cafe", "カフェ内装"],
+              ["Interior", "インテリア設計"],
+            ].map(([en, ja], i) => (
+              <div className="g-item" key={i}>
+                <div className="ph">{`Works ${String(i + 1).padStart(2, "0")}`}</div>
+                <div className="g-cap"><small>{en}</small>{ja}</div>
+              </div>
             ))}
           </div>
-          <p className="center mt-32"><Link className="btn btn--ghost" href="/works">実績一覧を見る</Link></p>
+          <p className="center mt-32"><Link className="btn btn--ghost" href="/works">施工実績をすべて見る</Link></p>
         </div>
       </section>
 
