@@ -4,13 +4,13 @@ import Link from "next/link"
 import { useState } from "react"
 
 const NAV = [
-  { href: "/", label: "TOP" },
-  { href: "/recruit", label: "求人募集中" },
-  { href: "/about", label: "私たちについて" },
-  { href: "/works", label: "施工実績" },
-  { href: "/consulting", label: "建築なんでも相談" },
-  { href: "/branding", label: "空間プロデュース" },
-  { href: "/contact", label: "お問合せ", cta: true },
+  { href: "/", en: "Home", label: "TOP" },
+  { href: "/works", en: "Works", label: "施工実績" },
+  { href: "/branding", en: "Branding", label: "空間プロデュース" },
+  { href: "/consulting", en: "Consulting", label: "建築何でも相談" },
+  { href: "/recruit", en: "Recruit", label: "採用情報" },
+  { href: "/about", en: "Company", label: "会社概要" },
+  { href: "/contact", en: "Contact", label: "お問い合わせ", cta: true },
 ]
 
 export default function SiteHeader() {
@@ -38,7 +38,8 @@ export default function SiteHeader() {
           {NAV.map((n) => (
             <li key={n.href} className={n.cta ? "is-cta" : undefined}>
               <Link href={n.href} onClick={() => setOpen(false)}>
-                {n.label}
+                <span className="menu__en">{n.en}</span>
+                <span className="menu__jp">{n.label}</span>
               </Link>
             </li>
           ))}

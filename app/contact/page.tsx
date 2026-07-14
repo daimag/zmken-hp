@@ -14,7 +14,7 @@ export default function Contact() {
             <div className="feature__body">
               <h2>お電話でのお問い合わせ</h2>
               <p className="tel" style={{ color: "var(--pink-d)", fontSize: "2rem", fontWeight: 900 }}>
-                093-000-0000
+                093-931-0301
               </p>
               <p style={{ color: "var(--muted)" }}>受付時間 9:00 - 18:00（土日祝を除く）</p>
               <p style={{ marginTop: 20 }}>

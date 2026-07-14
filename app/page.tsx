@@ -1,31 +1,43 @@
 import Link from "next/link"
+import WorksMosaic from "@/components/WorksMosaic"
 
 export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
       <section className="hero">
-        <div className="hero__bg" />
+        <div className="hero__photo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/works/k_9.jpg" alt="ゼムケンサービスの施工実績" />
+        </div>
         <div className="hero__scrim" />
         <div className="hero__copy">
-          <p className="label label--line">Space Branding ／ Kitakyushu</p>
+          <p className="label label--line">Space Design ／ Kitakyushu</p>
           <h1>
-            女性力で、建設業界を
+            オモイを、
             <br />
-            <em>ぱーっと明るく</em>。
+            <em>カタチに。</em>
           </h1>
-          <p className="hero__lead">オモイをカタチに ―― 建築は統合芸術。</p>
+          <p className="hero__lead">
+            女性の感性で、店舗・住宅・空間をデザインする。
+            <br />
+            ― 建築は統合芸術 ―
+          </p>
           <div className="hero__cta">
-            <Link className="btn btn--light" href="/branding">空間プロデュースを見る</Link>
             <Link className="btn btn--light" href="/works">施工実績を見る</Link>
+            <Link className="btn btn--light" href="/branding">空間プロデュース</Link>
           </div>
         </div>
+        <span className="hero__scroll">SCROLL</span>
       </section>
 
       {/* ============ DIY FRIENDS ============ */}
       <section className="section">
         <div className="wrap feature">
-          <div className="feature__media"><div className="ph">DIY FRIENDS<br />イメージ画像</div></div>
+          <div className="feature__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/works/k_15.jpg" alt="DIY FRIENDS" />
+          </div>
           <div className="feature__body">
             <p className="eyebrow">PROJECT</p>
             <h2>DIY FRIENDS プロジェクト</h2>
@@ -90,21 +102,7 @@ export default function Home() {
           <p className="lead">店舗・住宅・オフィス。女性ならではの視点で仕上げた空間の数々。</p>
         </div>
         <div className="wrap mt-32">
-          <div className="gallery">
-            {[
-              ["Store", "店舗デザイン"],
-              ["Residence", "住宅リノベーション"],
-              ["Office", "オフィス空間"],
-              ["Branding", "空間ブランディング"],
-              ["Cafe", "カフェ内装"],
-              ["Interior", "インテリア設計"],
-            ].map(([en, ja], i) => (
-              <div className="g-item" key={i}>
-                <div className="ph">{`Works ${String(i + 1).padStart(2, "0")}`}</div>
-                <div className="g-cap"><small>{en}</small>{ja}</div>
-              </div>
-            ))}
-          </div>
+          <WorksMosaic limit={8} />
           <p className="center mt-32"><Link className="btn btn--ghost" href="/works">施工実績をすべて見る</Link></p>
         </div>
       </section>
@@ -112,7 +110,10 @@ export default function Home() {
       {/* ============ BRANDING ============ */}
       <section className="section section--soft">
         <div className="wrap feature feature--rev">
-          <div className="feature__media"><div className="ph">空間ブランディング<br />イメージ</div></div>
+          <div className="feature__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/works/k_20.jpg" alt="空間ブランディング" />
+          </div>
           <div className="feature__body">
             <p className="eyebrow">ARCHITECTURAL BRANDING</p>
             <h2>空間プロデュース</h2>
@@ -140,7 +141,10 @@ export default function Home() {
       {/* ============ CONSULTING ============ */}
       <section className="section section--soft">
         <div className="wrap feature">
-          <div className="feature__media"><div className="ph">建築なんでも相談室<br />イメージ</div></div>
+          <div className="feature__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/works/k_18.jpg" alt="建築なんでも相談室" />
+          </div>
           <div className="feature__body">
             <p className="eyebrow">CONSULTING SERVICE</p>
             <h2>建築なんでも相談室</h2>
@@ -200,7 +204,7 @@ export default function Home() {
             <p className="eyebrow" style={{ color: "var(--sun)" }}>CONTACT</p>
             <h2>お気軽にご相談ください</h2>
             <p>店舗づくり・空間ブランディング・建築のお悩み、まずはお話をお聞かせください。</p>
-            <p className="tel">093-000-0000</p>
+            <p className="tel">093-931-0301</p>
             <p style={{ fontSize: ".85rem", opacity: 0.85 }}>受付時間 9:00 - 18:00（土日祝を除く）</p>
             <Link className="btn" href="/contact">お問い合わせフォーム</Link>
           </div>

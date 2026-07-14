@@ -18,7 +18,7 @@ export default function Consulting() {
           <div className="contact-box">
             <h2>まずはお気軽にご相談を</h2>
             <p>相談は無料です。お電話またはフォームからどうぞ。</p>
-            <p className="tel">093-000-0000</p>
+            <p className="tel">093-931-0301</p>
             <Link className="btn" href="/contact">相談フォームへ</Link>
           </div>
         </div>
