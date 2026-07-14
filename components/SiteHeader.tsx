@@ -19,7 +19,8 @@ export default function SiteHeader() {
     <header className="header">
       <div className="wrap nav">
         <Link className="brand" href="/">
-          <span className="brand__logo">Zm</span>
+          {/* 実ロゴ（Zm'ken 赤ワードマーク）を再現。実画像を差し込む場合は public/logo.svg に置換 */}
+          <span className="brand__mark">Zm&apos;ken</span>
           <span className="brand__name">
             有限会社ゼムケンサービス<small>Zm&apos;ken Service Co., Ltd.</small>
           </span>

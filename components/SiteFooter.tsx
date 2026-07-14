@@ -6,7 +6,7 @@ export default function SiteFooter() {
       <div className="wrap footer__top">
         <div className="footer__brand">
           <div className="brand">
-            <span className="brand__logo">Zm</span>
+            <span className="brand__mark">Zm&apos;ken</span>
             <span className="brand__name">
               有限会社ゼムケンサービス<small>Zm&apos;ken Service Co., Ltd.</small>
             </span>
