@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import V4PageHero from "@/components/v4/V4PageHero"
 import V4WorkCatalog from "@/components/v4/V4WorkCatalog"
-import { WORKS_CATS, FEATURED, WORKS_ALL, BRANDING, SEMINARS } from "@/components/v4/data"
+import { FEATURED, WORKS_ALL, BRANDING, SEMINARS } from "@/components/v4/data"
 
 export const metadata: Metadata = {
   title: "施工実績",
@@ -22,16 +22,6 @@ export default function WorksPage() {
 
       {/* カテゴリ */}
       <section className="v4-sec v4-works">
-        <div className="wrap4 v4-worktags">
-          {WORKS_CATS.map((c) => (
-            <div className="v4-worktag" key={c.en}>
-              <span className="v4-worktag__en">{c.en}</span>
-              <span className="v4-worktag__ja">{c.ja}</span>
-              <span className="v4-worktag__note">{c.note}</span>
-            </div>
-          ))}
-        </div>
-
         {/* 特集 */}
         <div className="wrap4 v4-feat">
           {FEATURED.map((w, i) => (

@@ -4,7 +4,15 @@ import { useCallback, useEffect, useState } from "react"
 import { WORK_FILTERS, workCat, type WorkRow } from "@/components/v4/data"
 import V4WorkSlides from "./V4WorkSlides"
 
-export default function V4WorkCatalog({ items }: { items: WorkRow[] }) {
+type Variant = "card" | "tile"
+
+export default function V4WorkCatalog({
+  items,
+  variant = "card",
+}: {
+  items: WorkRow[]
+  variant?: Variant
+}) {
   const [filter, setFilter] = useState<string>("すべて")
   const [cur, setCur] = useState<WorkRow | null>(null)
   const [idx, setIdx] = useState(0)
@@ -30,59 +38,72 @@ export default function V4WorkCatalog({ items }: { items: WorkRow[] }) {
 
   const list = filter === "すべて" ? items : items.filter((w) => workCat(w.name) === filter)
 
+  const clickProps = (w: WorkRow, has: boolean) =>
+    has
+      ? {
+          onClick: () => setCur(w),
+          role: "button" as const,
+          tabIndex: 0,
+          onKeyDown: (e: React.KeyboardEvent) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault()
+              setCur(w)
+            }
+          },
+        }
+      : {}
+
   return (
     <>
       {/* カテゴリフィルタ */}
       <div className="v4-filters">
         {WORK_FILTERS.map((f) => (
-          <button
-            key={f}
-            className={`v4-filter ${filter === f ? "is-on" : ""}`}
-            onClick={() => setFilter(f)}
-          >
+          <button key={f} className={`v4-filter ${filter === f ? "is-on" : ""}`} onClick={() => setFilter(f)}>
             {f}
           </button>
         ))}
       </div>
 
-      <div className="v4-pcards">
-        {list.map((w) => {
-          const has = !!(w.imgs && w.imgs.length > 0)
-          return (
-            <article
-              className={`v4-pcard ${has ? "is-clickable" : ""}`}
-              key={`${w.name}-${w.year}`}
-              onClick={has ? () => setCur(w) : undefined}
-              role={has ? "button" : undefined}
-              tabIndex={has ? 0 : undefined}
-              onKeyDown={
-                has
-                  ? (e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault()
-                        setCur(w)
-                      }
-                    }
-                  : undefined
-              }
-            >
-              <div className="v4-pcard__ph">
-                {has ? <V4WorkSlides imgs={w.imgs!} alt={w.name} /> : <span>photo</span>}
-                {has && w.imgs!.length > 1 ? (
-                  <span className="v4-pcard__count">＋{w.imgs!.length}枚</span>
-                ) : null}
-              </div>
-              <div className="v4-pcard__body">
-                <h3 className="v4-pcard__name">{w.name}</h3>
-                <p className="v4-pcard__meta">
-                  {w.year}｜{w.type}
-                </p>
-                {w.note ? <p className="v4-pcard__note">{w.note}</p> : null}
-              </div>
-            </article>
-          )
-        })}
-      </div>
+      {variant === "tile" ? (
+        <div className="v4-tiles">
+          {list.map((w) => {
+            const has = !!(w.imgs && w.imgs.length > 0)
+            return (
+              <article className={`v4-tile ${has ? "is-clickable" : ""}`} key={`${w.name}-${w.year}`} {...clickProps(w, has)}>
+                {has ? <V4WorkSlides imgs={w.imgs!} alt={w.name} /> : <span className="v4-tile__ph">photo</span>}
+                {has && w.imgs!.length > 1 ? <span className="v4-pcard__count">＋{w.imgs!.length}枚</span> : null}
+                <div className="v4-tile__cap">
+                  <p className="v4-tile__name">{w.name}</p>
+                  <p className="v4-tile__meta">
+                    {w.year}｜{w.type}
+                  </p>
+                </div>
+              </article>
+            )
+          })}
+        </div>
+      ) : (
+        <div className="v4-pcards">
+          {list.map((w) => {
+            const has = !!(w.imgs && w.imgs.length > 0)
+            return (
+              <article className={`v4-pcard ${has ? "is-clickable" : ""}`} key={`${w.name}-${w.year}`} {...clickProps(w, has)}>
+                <div className="v4-pcard__ph">
+                  {has ? <V4WorkSlides imgs={w.imgs!} alt={w.name} /> : <span>photo</span>}
+                  {has && w.imgs!.length > 1 ? <span className="v4-pcard__count">＋{w.imgs!.length}枚</span> : null}
+                </div>
+                <div className="v4-pcard__body">
+                  <h3 className="v4-pcard__name">{w.name}</h3>
+                  <p className="v4-pcard__meta">
+                    {w.year}｜{w.type}
+                  </p>
+                  {w.note ? <p className="v4-pcard__note">{w.note}</p> : null}
+                </div>
+              </article>
+            )
+          })}
+        </div>
+      )}
 
       {cur ? (
         <div className="v4-modal" onClick={close} role="dialog" aria-modal="true" aria-label={cur.name}>
@@ -97,18 +118,10 @@ export default function V4WorkCatalog({ items }: { items: WorkRow[] }) {
               ) : null}
               {imgs.length > 1 ? (
                 <>
-                  <button
-                    className="v4-modal__nav v4-modal__nav--prev"
-                    onClick={() => setIdx((i) => (i - 1 + imgs.length) % imgs.length)}
-                    aria-label="前の写真"
-                  >
+                  <button className="v4-modal__nav v4-modal__nav--prev" onClick={() => setIdx((i) => (i - 1 + imgs.length) % imgs.length)} aria-label="前の写真">
                     ‹
                   </button>
-                  <button
-                    className="v4-modal__nav v4-modal__nav--next"
-                    onClick={() => setIdx((i) => (i + 1) % imgs.length)}
-                    aria-label="次の写真"
-                  >
+                  <button className="v4-modal__nav v4-modal__nav--next" onClick={() => setIdx((i) => (i + 1) % imgs.length)} aria-label="次の写真">
                     ›
                   </button>
                 </>
@@ -124,12 +137,7 @@ export default function V4WorkCatalog({ items }: { items: WorkRow[] }) {
               {imgs.length > 1 ? (
                 <div className="v4-modal__thumbs">
                   {imgs.map((src, i) => (
-                    <button
-                      key={src}
-                      className={`v4-modal__thumb ${i === idx ? "is-on" : ""}`}
-                      onClick={() => setIdx(i)}
-                      aria-label={`写真 ${i + 1}`}
-                    >
+                    <button key={src} className={`v4-modal__thumb ${i === idx ? "is-on" : ""}`} onClick={() => setIdx(i)} aria-label={`写真 ${i + 1}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={src} alt="" />
                     </button>
