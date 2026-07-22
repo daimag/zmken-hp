@@ -4,32 +4,32 @@ const COLS = [
   {
     head: "事業・サービス",
     links: [
-      { href: "/branding", label: "空間プロデュース" },
-      { href: "/works", label: "施工実績" },
-      { href: "/consulting", label: "建築何でも相談" },
-      { href: "/branding", label: "ブランディング講座" },
-      { href: "/", label: "DIY FRIENDS" },
+      { href: "/v1/branding", label: "空間プロデュース" },
+      { href: "/v1/works", label: "施工実績" },
+      { href: "/v1/consulting", label: "建築何でも相談" },
+      { href: "/v1/branding", label: "ブランディング講座" },
+      { href: "/v1", label: "DIY FRIENDS" },
     ],
   },
   {
     head: "会社案内",
     links: [
-      { href: "/about", label: "会社概要" },
-      { href: "/about#message", label: "代表あいさつ・プロフィール" },
-      { href: "/about#philosophy", label: "理念体系" },
-      { href: "/about#history", label: "沿革" },
-      { href: "/about#staff", label: "スタッフ紹介" },
-      { href: "/recruit", label: "採用情報" },
+      { href: "/v1/about", label: "会社概要" },
+      { href: "/v1/about#message", label: "代表あいさつ・プロフィール" },
+      { href: "/v1/about#philosophy", label: "理念体系" },
+      { href: "/v1/about#history", label: "沿革" },
+      { href: "/v1/about#staff", label: "スタッフ紹介" },
+      { href: "/v1/recruit", label: "採用情報" },
     ],
   },
   {
     head: "取り組み",
     links: [
-      { href: "/about#sdgs", label: "SDGsへの取り組み" },
-      { href: "/about#csr", label: "CSR" },
-      { href: "/about#machi", label: "まちづくりへの取り組み" },
-      { href: "/about#public", label: "公共事業（北九州市・福岡県）" },
-      { href: "/about#media", label: "講演・メディア掲載実績" },
+      { href: "/v1/about#sdgs", label: "SDGsへの取り組み" },
+      { href: "/v1/about#csr", label: "CSR" },
+      { href: "/v1/about#machi", label: "まちづくりへの取り組み" },
+      { href: "/v1/about#public", label: "公共事業（北九州市・福岡県）" },
+      { href: "/v1/about#media", label: "講演・メディア掲載実績" },
     ],
   },
 ]
@@ -77,7 +77,7 @@ export default function SiteFooter() {
       <div className="wrap footer__btm">
         <span>© 2026 有限会社ゼムケンサービス（サンプル）</span>
         <span>
-          <Link href="/contact">お問い合わせ</Link>　｜　プライバシーポリシー　｜　サイトマップ
+          <Link href="/v1/contact">お問い合わせ</Link>　｜　プライバシーポリシー　｜　サイトマップ
         </span>
       </div>
     </footer>

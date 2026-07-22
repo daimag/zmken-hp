@@ -4,13 +4,13 @@ import Link from "next/link"
 import { useState } from "react"
 
 const NAV = [
-  { href: "/", en: "Home", label: "TOP" },
-  { href: "/works", en: "Works", label: "施工実績" },
-  { href: "/branding", en: "Branding", label: "空間プロデュース" },
-  { href: "/consulting", en: "Consulting", label: "建築何でも相談" },
-  { href: "/recruit", en: "Recruit", label: "採用情報" },
-  { href: "/about", en: "Company", label: "会社概要" },
-  { href: "/contact", en: "Contact", label: "お問い合わせ", cta: true },
+  { href: "/v1", en: "Home", label: "TOP" },
+  { href: "/v1/works", en: "Works", label: "施工実績" },
+  { href: "/v1/branding", en: "Branding", label: "空間プロデュース" },
+  { href: "/v1/consulting", en: "Consulting", label: "建築何でも相談" },
+  { href: "/v1/recruit", en: "Recruit", label: "採用情報" },
+  { href: "/v1/about", en: "Company", label: "会社概要" },
+  { href: "/v1/contact", en: "Contact", label: "お問い合わせ", cta: true },
 ]
 
 export default function SiteHeader() {
@@ -18,7 +18,7 @@ export default function SiteHeader() {
   return (
     <header className="header">
       <div className="wrap nav">
-        <Link className="brand" href="/">
+        <Link className="brand" href="/v1">
           {/* 実ロゴ（Zm'ken 赤ワードマーク）を再現。実画像を差し込む場合は public/logo.svg に置換 */}
           <span className="brand__mark">Zm&apos;ken</span>
           <span className="brand__name">

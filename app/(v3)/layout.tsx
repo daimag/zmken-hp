@@ -7,6 +7,7 @@ import V2Reveal from "@/components/v2/V2Reveal"
 export const metadata: Metadata = {
   title: "ゼムケンサービス｜v3 デザイン案（ミニマル / キネティック）",
   description: "白基調×極細巨大タイポ×グリッド線×ティールのv3デザイン案。",
+  robots: { index: false, follow: false },
 }
 
 export default function V3Layout({
@@ -17,7 +18,7 @@ export default function V3Layout({
   return (
     <div className="v3" id="top">
       <div className="v3-note">
-        ★ 新デザイン案（v3 / ミニマル・キネティック）― 現行「/」・別案「/v2」もご覧いただけます
+        ★ 過去デザイン案（v3 / ミニマル・キネティック）― 本番「/」・旧現行踏襲版「/v1」・別案「/v2」
       </div>
       <V3Header />
       {children}

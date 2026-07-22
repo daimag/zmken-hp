@@ -1,0 +1,154 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import V4PageHero from "@/components/v4/V4PageHero"
+import V4WorkSlides from "@/components/v4/V4WorkSlides"
+import { WORKS_CATS, FEATURED, WORKS_ALL, BRANDING, SEMINARS } from "@/components/v4/data"
+
+export const metadata: Metadata = {
+  title: "施工実績",
+  description:
+    "北九州・福岡の店舗・住宅・オフィスの施工実績。女性視点の空間デザインで手がけた事例をご紹介します。",
+}
+
+export default function WorksPage() {
+  return (
+    <>
+      <V4PageHero
+        idx="02"
+        en="Works"
+        title="施工実績"
+        lead="店舗・住宅・オフィス。女性ならではの視点で仕上げた空間の数々をご覧ください。"
+      />
+
+      {/* カテゴリ */}
+      <section className="v4-sec v4-works">
+        <div className="wrap4 v4-worktags">
+          {WORKS_CATS.map((c) => (
+            <div className="v4-worktag" key={c.en}>
+              <span className="v4-worktag__en">{c.en}</span>
+              <span className="v4-worktag__ja">{c.ja}</span>
+              <span className="v4-worktag__note">{c.note}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* 特集 */}
+        <div className="wrap4 v4-feat">
+          {FEATURED.map((w, i) => (
+            <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={w.title}>
+              <div className="v4-featitem__media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={w.img} alt={w.title} />
+              </div>
+              <div className="v4-featitem__body">
+                <p className="v4-featitem__meta">
+                  <span className="v4-featitem__cat">{w.cat}</span>
+                  <span>
+                    {w.catJa}｜{w.loc}｜{w.year}
+                  </span>
+                </p>
+                <h2 className="v4-featitem__title">{w.title}</h2>
+                <p className="v4-featitem__text">{w.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 空間ブランディング（La Chic） */}
+      <section className="v4-sec v4-sec--cream">
+        <div className="wrap4 v4-shead v4-shead--center">
+          <p className="v4-eyebrow">Branding — La Chic</p>
+          <h2 className="v4-h2">女性視点の空間ブランディング</h2>
+          <p className="v4-lead">
+            お客さまの歴史や想いを読み解き、五感で心地よさを設計する。&ldquo;その人らしさ&rdquo;をカタチにするブランディング事例です。
+          </p>
+        </div>
+        <div className="wrap4 v4-feat">
+          {BRANDING.map((b, i) => (
+            <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={b.title}>
+              <div className="v4-featitem__media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={b.img} alt={b.title} loading="lazy" />
+              </div>
+              <div className="v4-featitem__body">
+                <p className="v4-featitem__meta">
+                  <span className="v4-featitem__cat">{b.en}</span>
+                </p>
+                <h3 className="v4-featitem__title">{b.title}</h3>
+                <p className="v4-featitem__text">{b.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 事例カタログ */}
+      <section className="v4-sec">
+        <div className="wrap4 v4-shead v4-shead--center">
+          <span className="v4-shead__idx">List</span>
+          <p className="v4-eyebrow">Project List</p>
+          <h2 className="v4-h2">施工事例</h2>
+          <p className="v4-lead">
+            近年の主な施工事例です。写真・詳細は順次追加してまいります。
+          </p>
+        </div>
+        <div className="wrap4">
+          <div className="v4-pcards">
+            {WORKS_ALL.map((w) => (
+              <article className="v4-pcard" key={`${w.name}-${w.year}`}>
+                <div className="v4-pcard__ph">
+                  {w.imgs && w.imgs.length > 0 ? (
+                    <V4WorkSlides imgs={w.imgs} alt={w.name} />
+                  ) : (
+                    <span>photo</span>
+                  )}
+                </div>
+                <div className="v4-pcard__body">
+                  <h3 className="v4-pcard__name">{w.name}</h3>
+                  <p className="v4-pcard__meta">
+                    {w.year}｜{w.type}
+                  </p>
+                  {w.note ? <p className="v4-pcard__note">{w.note}</p> : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* セミナー・WORKSHOP／まちづくり */}
+      <section className="v4-sec v4-sec--cream">
+        <div className="wrap4 v4-shead v4-shead--center">
+          <p className="v4-eyebrow">Seminar / Machizukuri</p>
+          <h2 className="v4-h2">セミナー・まちづくり</h2>
+          <p className="v4-lead">
+            建築の枠を超えて、人とまちを元気にする活動にも取り組んでいます。
+          </p>
+        </div>
+        <div className="wrap4 v4-feat">
+          {SEMINARS.map((s, i) => (
+            <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={s.title}>
+              <div className="v4-featitem__media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.img} alt={s.title} loading="lazy" />
+              </div>
+              <div className="v4-featitem__body">
+                <p className="v4-featitem__meta">
+                  <span className="v4-featitem__cat">{s.period}</span>
+                </p>
+                <h3 className="v4-featitem__title">{s.title}</h3>
+                <p className="v4-featitem__text">{s.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="center mt40">
+          <Link className="v4-btn v4-btn--fill" href="/contact">
+            お問い合わせ
+          </Link>
+        </p>
+      </section>
+    </>
+  )
+}

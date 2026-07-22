@@ -7,6 +7,7 @@ import V2Reveal from "@/components/v2/V2Reveal"
 export const metadata: Metadata = {
   title: "ゼムケンサービス｜v2 デザイン案（ハイブリッド）",
   description: "白基調×特大タイポ×曲線×写真主役のv2デザイン案。",
+  robots: { index: false, follow: false },
 }
 
 export default function V2Layout({
@@ -17,7 +18,7 @@ export default function V2Layout({
   return (
     <div className="v2" id="top">
       <div className="v2-note">
-        ★ 新デザイン案（v2 / ハイブリッド）― 現行デザインは「/」でご覧いただけます
+        ★ 過去デザイン案（v2 / ハイブリッド）― 本番は「/」、旧現行踏襲版は「/v1」
       </div>
       <V2Header />
       {children}
