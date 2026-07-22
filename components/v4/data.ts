@@ -111,6 +111,31 @@ export const WORKS_ALL: WorkRow[] = [
   { name: "HALU GIORNALE テナント", year: "—", type: "テナント", imgs: W("p03", 3) },
 ]
 
+/* ---------- 施工実績のカテゴリ（フィルタ用。呼称・振り分けは8/6で先方確認） ---------- */
+export const WORK_FILTERS = ["すべて", "店舗・商業", "施設・ホテル", "住宅"] as const
+
+const CAT_HOUSE = ["Cream Design", "M様邸"]
+const CAT_FACILITY = [
+  "おんくり唐津（ホテル）1期工事",
+  "おんくり唐津（ホテル）2期工事",
+  "あかつき幼稚園",
+  "ハイマート花梨（介護施設）",
+  "ゆめそだて（介護支援施設）",
+  "ホテルテトラ（客室）",
+  "松柏園ホテル ジュエルボックス",
+  "ホテルテトラ（外階段）",
+  "旭興産クラブハウス",
+  "日王の湯（施設）2期工事",
+  "日王の湯（施設）1期工事",
+  "篠崎八幡神社トイレ",
+  "NUMABALI Garden Spa",
+]
+export function workCat(name: string): "店舗・商業" | "施設・ホテル" | "住宅" {
+  if (CAT_HOUSE.includes(name)) return "住宅"
+  if (CAT_FACILITY.includes(name)) return "施設・ホテル"
+  return "店舗・商業"
+}
+
 /* ---------- 空間ブランディング事例（事業・実績） ---------- */
 export const BRANDING = [
   { title: "sweets shop FAVORI PLUS 本店", en: "Sweets Shop", img: "/studio/works/p09-1.jpg", text: "石畳のようなパールトーンへ。空間全体を1枚のギフトのようにご提案。しっとりとした落ち着いた雰囲気の中に、華やいだ光をまとわせました。" },

@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         // 旧版・検討版は検索インデックスから除外（重複コンテンツ対策）
         // /v1=旧デザイン(現行踏襲) / v2・v3=過去のデザイン案
-        disallow: ["/v1", "/v2", "/v3"],
+        disallow: ["/v1", "/v2", "/v3", "/works2"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

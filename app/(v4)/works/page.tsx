@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import V4PageHero from "@/components/v4/V4PageHero"
-import V4WorkSlides from "@/components/v4/V4WorkSlides"
+import V4WorkCatalog from "@/components/v4/V4WorkCatalog"
 import { WORKS_CATS, FEATURED, WORKS_ALL, BRANDING, SEMINARS } from "@/components/v4/data"
 
 export const metadata: Metadata = {
@@ -90,30 +90,14 @@ export default function WorksPage() {
           <p className="v4-eyebrow">Project List</p>
           <h2 className="v4-h2">施工事例</h2>
           <p className="v4-lead">
-            近年の主な施工事例です。写真・詳細は順次追加してまいります。
+            近年の主な施工事例です。カードをクリックすると、写真と詳細をご覧いただけます。
           </p>
         </div>
         <div className="wrap4">
-          <div className="v4-pcards">
-            {WORKS_ALL.map((w) => (
-              <article className="v4-pcard" key={`${w.name}-${w.year}`}>
-                <div className="v4-pcard__ph">
-                  {w.imgs && w.imgs.length > 0 ? (
-                    <V4WorkSlides imgs={w.imgs} alt={w.name} />
-                  ) : (
-                    <span>photo</span>
-                  )}
-                </div>
-                <div className="v4-pcard__body">
-                  <h3 className="v4-pcard__name">{w.name}</h3>
-                  <p className="v4-pcard__meta">
-                    {w.year}｜{w.type}
-                  </p>
-                  {w.note ? <p className="v4-pcard__note">{w.note}</p> : null}
-                </div>
-              </article>
-            ))}
-          </div>
+          <V4WorkCatalog items={WORKS_ALL} />
+          <p className="v4-compare">
+            <Link href="/works2">別レイアウト（タイル型・案件名オーバーレイ）で見る →</Link>
+          </p>
         </div>
       </section>
 
