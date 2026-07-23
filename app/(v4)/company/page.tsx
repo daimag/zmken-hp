@@ -27,18 +27,22 @@ export default function CompanyPage() {
 
       {/* 理念 */}
       <section className="v4-sec">
-        <div className="wrap4 v4-shead v4-shead--left">
-          <p className="v4-eyebrow">Philosophy</p>
-          <h2 className="v4-h2">理念</h2>
-        </div>
-        <div className="wrap4 v4-rinen v4-rinen--left">
-          <p className="v4-rinen__title">{PHILOSOPHY.rinen}</p>
-          <p className="v4-rinen__body">{PHILOSOPHY.rinenBody}</p>
-          <p className="v4-rinen__body">{PHILOSOPHY.visionBody}</p>
-          <figure className="v4-poster">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/studio/rinen.jpg" alt="ゼムケンサービス 理念ポスター「オモイをカタチに 建築は統合芸術」" />
-          </figure>
+        <div className="wrap4 v4-about__grid">
+          <div className="v4-about__head">
+            <div className="v4-shead">
+              <p className="v4-eyebrow">Philosophy</p>
+              <h2 className="v4-h2">理念</h2>
+            </div>
+          </div>
+          <div className="v4-about__body">
+            <p className="v4-rinen__title">{PHILOSOPHY.rinen}</p>
+            <p className="v4-rinen__body">{PHILOSOPHY.rinenBody}</p>
+            <p className="v4-rinen__body">{PHILOSOPHY.visionBody}</p>
+            <figure className="v4-poster">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/studio/rinen.jpg" alt="ゼムケンサービス 理念ポスター「オモイをカタチに 建築は統合芸術」" />
+            </figure>
+          </div>
         </div>
       </section>
 
