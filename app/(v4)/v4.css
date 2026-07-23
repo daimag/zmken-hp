@@ -1114,3 +1114,13 @@ html:has(.v4) { scroll-behavior: smooth; }
 .v4-portrait { transition: box-shadow 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
 .v4-figure img:hover,
 .v4-teamband img:hover { box-shadow: 0 30px 60px -30px rgba(28, 24, 21, 0.5); transform: translateY(-4px); }
+
+/* ============================================================
+   セクション交互背景（純白を避け、アイボリー↔クリームのリズム）
+   ・ヒーロー(.v4-page-hero)は対象外（写真背景を維持）
+   ・ダーク(.v4-sec--dark)も対象外（アクセントを維持）
+   ・nth-of-type はヒーローを1番目として数えるため、
+     最初のコンテンツsection(=2番目)がクリームから始まる
+   ============================================================ */
+.v4 main > .v4-sec:not(.v4-sec--dark) { background: #fbf6ec; }
+.v4 main > .v4-sec:not(.v4-sec--dark):nth-of-type(even) { background: var(--cream); }
