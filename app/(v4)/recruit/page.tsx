@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import V4PageHero from "@/components/v4/V4PageHero"
+import V4CountUp from "@/components/v4/V4CountUp"
 import {
   RECRUIT_STATS,
   RECRUIT_VOICES,
@@ -30,7 +31,7 @@ export default function RecruitPage() {
           {RECRUIT_STATS.map((s, i) => (
             <div className="v4-stat" key={s.label} style={{ transitionDelay: `${i * 120}ms` }}>
               <p className="v4-stat__num">
-                {s.num}
+                <V4CountUp value={s.num} />
                 <span>{s.unit}</span>
               </p>
               <p className="v4-stat__label">{s.label}</p>

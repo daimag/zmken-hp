@@ -1,6 +1,7 @@
 import Link from "next/link"
 import V4HeroSlides from "@/components/v4/V4HeroSlides"
 import V4JsonLd from "@/components/v4/V4JsonLd"
+import V4CountUp from "@/components/v4/V4CountUp"
 import {
   NEWS,
   FEATURED,
@@ -226,7 +227,7 @@ export default function V4Home() {
           {RECRUIT_STATS.map((s, i) => (
             <div className="v4-stat" key={s.label} data-rise style={{ transitionDelay: `${i * 120}ms` }}>
               <p className="v4-stat__num">
-                {s.num}
+                <V4CountUp value={s.num} />
                 <span>{s.unit}</span>
               </p>
               <p className="v4-stat__label">{s.label}</p>
