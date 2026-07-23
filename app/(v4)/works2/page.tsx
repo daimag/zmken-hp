@@ -18,6 +18,7 @@ export default function Works2Page() {
         en="Works — Layout B"
         title="施工実績"
         lead="案件名をタイルに重ね、写真がフェードで切り替わるレイアウト案（WORK2・比較用）。カテゴリで絞り込み、タイルをクリックで拡大できます。"
+        img="/studio/nakasu-1.jpg"
       />
 
       <section className="v4-sec v4-works">

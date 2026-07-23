@@ -18,6 +18,7 @@ export default function WorksPage() {
         en="Works"
         title="施工実績"
         lead="店舗・住宅・オフィス。女性ならではの視点で仕上げた空間の数々をご覧ください。"
+        img="/studio/nakasu-1.jpg"
       />
 
       {/* カテゴリ */}

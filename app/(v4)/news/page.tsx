@@ -16,6 +16,7 @@ export default function NewsPage() {
         en="News"
         title="お知らせ"
         lead="受賞・メディア掲載・講演など、ゼムケンサービスの最新情報。"
+        img="/studio/seminar-mayor.jpg"
       />
 
       <section className="v4-sec v4-news">

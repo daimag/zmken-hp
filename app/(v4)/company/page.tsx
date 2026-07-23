@@ -23,6 +23,7 @@ export default function CompanyPage() {
         en="About us"
         title="会社情報"
         lead="オモイをカタチに、建築は統合芸術。北九州から、女性の感性でまちに元気を。"
+        img="/studio/staff.jpg"
       />
 
       {/* 理念 */}

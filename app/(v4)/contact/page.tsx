@@ -16,6 +16,7 @@ export default function ContactPage() {
         en="Contact"
         title="お問い合わせ"
         lead="店舗づくり・住まいのご相談、採用・取材のお問い合わせまで。どんなことでもお気軽にどうぞ。"
+        img="/studio/oasis1.jpg"
       />
 
       <section className="v4-sec">

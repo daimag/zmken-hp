@@ -23,6 +23,7 @@ export default function RecruitPage() {
         en="Recruit"
         title="建築業界を、女性の力でぱーっと明るく。"
         lead="「好き」を仕事にしたい方へ。未経験からでも安心して成長できる環境と、長く活躍できる働き方があります。"
+        img="/studio/recruit-group.jpg"
       />
 
       {/* 数字 */}

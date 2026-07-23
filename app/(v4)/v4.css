@@ -642,6 +642,34 @@ html:has(.v4) { scroll-behavior: smooth; }
 .v4-page-hero .v4-shead { text-align: center; margin-bottom: 0; }
 .v4-page-hero .v4-lead { margin-inline: auto; max-width: 42em; }
 
+/* 写真背景ヒーロー（骨太・濃いオーバーレイ） */
+.v4-page-hero--photo {
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: none;
+  padding: clamp(150px, 22vh, 240px) 0 clamp(56px, 8vh, 96px);
+  overflow: hidden;
+}
+.v4-page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(20,16,13,0.42) 0%, rgba(20,16,13,0.66) 62%, rgba(20,16,13,0.82) 100%),
+    radial-gradient(120% 80% at 50% 30%, rgba(20,16,13,0.12) 0%, rgba(20,16,13,0.55) 100%);
+}
+.v4-page-hero__inner { position: relative; z-index: 1; }
+.v4-page-hero--photo .v4-shead__idx { color: var(--accent); opacity: 0.95; }
+.v4-page-hero--photo .v4-eyebrow { color: #f3c79c; }
+.v4-page-hero--photo .v4-h2 {
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+}
+.v4-page-hero--photo .v4-lead { color: rgba(255,255,255,0.9); }
+
 .v4-crumb {
   margin-top: clamp(30px, 5vw, 56px);
   text-align: center;

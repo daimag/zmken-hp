@@ -17,6 +17,7 @@ export default function ServicePage() {
         en="Service"
         title="事業内容"
         lead="企画・設計から施工、ブランディングまで。女性視点の空間づくりを一貫して手がけます。"
+        img="/studio/favori-2.jpg"
       />
 
       {/* ARCHITECTURE / 空間ブランディング */}

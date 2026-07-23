@@ -16,6 +16,7 @@ export default function DxPage() {
         en="DX × Diversity"
         title="建設業を、民主化する。"
         lead="誰もが建設業で活躍できるように。ゼムケンサービスは、現場を支える3つのデジタルツールを自社開発しています。"
+        img="/studio/dx-future.jpg"
       />
 
       {/* 私たちの考え（DX×ダイバーシティの理由） */}
