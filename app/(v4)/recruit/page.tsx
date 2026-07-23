@@ -65,15 +65,17 @@ export default function RecruitPage() {
         </div>
         <div className="wrap4 v4-voices">
           {RECRUIT_VOICES.map((v, i) => (
-            <figure className="v4-voice" key={v.role} style={{ transitionDelay: `${i * 120}ms` }}>
+            <figure className="v4-voice" key={v.name} style={{ transitionDelay: `${i * 90}ms` }}>
               <div className="v4-voice__media">
-                <div className="v4-voice__ph">photo</div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={v.img} alt={`${v.name}（${v.role}）`} loading="lazy" />
               </div>
               <figcaption>
                 <span className="v4-voice__quote" aria-hidden>
                   &ldquo;
                 </span>
                 <p className="v4-voice__text">{v.text}</p>
+                <p className="v4-voice__name">{v.name}</p>
                 <p className="v4-voice__role">{v.role}</p>
               </figcaption>
             </figure>
