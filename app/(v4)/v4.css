@@ -1323,3 +1323,18 @@ html:has(.v4) { scroll-behavior: smooth; }
 .v4-contactinfo__hours { font-size: 1.02rem; }
 .v4-contactinfo__dl dt { font-size: 0.92rem; letter-spacing: 0.04em; }
 .v4-contactinfo__dl dd { font-size: 1.05rem; }
+
+/* DXツールカードのアイコン（SVG） */
+.v4-worktag__icon { display: block; width: 46px; height: 46px; color: var(--accent); margin-bottom: 14px; }
+.v4-worktag__icon svg { width: 100%; height: 100%; }
+
+/* 採用の数字：さらに特大に・タイル余白を詰めて数字を主役に */
+.v4-stat { padding: 30px 18px 34px; }
+.v4-stat__num { font-size: clamp(5.5rem, 15vw, 9.5rem); }
+
+/* お問い合わせ等ヒーロー：白文字が読めるよう暗幕を強める */
+.v4-page-hero__scrim {
+  background:
+    linear-gradient(180deg, rgba(20,16,13,0.5) 0%, rgba(20,16,13,0.6) 55%, rgba(20,16,13,0.8) 100%),
+    radial-gradient(120% 80% at 50% 30%, rgba(20,16,13,0.2) 0%, rgba(20,16,13,0.55) 100%);
+}

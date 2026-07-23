@@ -10,6 +10,34 @@ import {
   RECRUIT_STATS,
 } from "@/components/v4/data"
 
+const DX_ICONS: Record<string, React.ReactNode> = {
+  PomPon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="2.5" y="5.5" width="13" height="10" rx="2" />
+      <circle cx="9" cy="10.5" r="2.4" />
+      <path d="M18 8.4a4 4 0 0 1 0 5.2" />
+      <path d="M20.6 6.4a7 7 0 0 1 0 9.2" />
+    </svg>
+  ),
+  CoCREA: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="3" y="4.5" width="15" height="10" rx="3" />
+      <circle cx="8" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+      <circle cx="10.7" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+      <circle cx="13.4" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+      <path d="M8.5 14.5 6 18v-3.5" />
+      <path d="M19.6 13.6l.62 1.6 1.6.62-1.6.62-.62 1.6-.62-1.6-1.6-.62 1.6-.62z" />
+    </svg>
+  ),
+  AIAR: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 3.2l7.2 4.1v8.2L12 19.6 4.8 15.5V7.3z" />
+      <path d="M4.9 7.4 12 11.5l7.1-4.1" />
+      <path d="M12 11.5v8" />
+    </svg>
+  ),
+}
+
 export default function V4Home() {
   return (
     <>
@@ -193,6 +221,7 @@ export default function V4Home() {
         <div className="wrap4 v4-worktags">
           {DX_TOOLS.map((c, i) => (
             <div className="v4-worktag v4-worktag--dx" key={c.en} data-rise style={{ transitionDelay: `${i * 90}ms` }}>
+              <span className="v4-worktag__icon">{DX_ICONS[c.en]}</span>
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>
