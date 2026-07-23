@@ -1299,3 +1299,11 @@ html:has(.v4) { scroll-behavior: smooth; }
 
 /* スタッフ集合写真が「浮く」→ 影・枠を外して面になじませる */
 .v4-teamband img { border: none; box-shadow: none; border-radius: 12px; }
+
+/* 編集写真の洗練：角丸オフ＋左右グラデーション(フェード)＋影は控えめ */
+.v4-editorial__media { border-radius: 0; box-shadow: 0 30px 70px -52px rgba(28,24,21,.4); }
+.v4-editorial__media img {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+.v4-editorial__tag { left: 40px; }
