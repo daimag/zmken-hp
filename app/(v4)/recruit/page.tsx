@@ -88,8 +88,9 @@ export default function RecruitPage() {
           <h2 className="v4-h2">募集職種</h2>
         </div>
         <div className="wrap4 v4-worktags">
-          {RECRUIT_ROLES.map((c) => (
-            <div className="v4-worktag" key={c.en}>
+          {RECRUIT_ROLES.map((c, i) => (
+            <div className="v4-worktag v4-worktag--role" key={c.en}>
+              <span className="v4-worktag__ro-no">{String(i + 1).padStart(2, "0")}</span>
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>

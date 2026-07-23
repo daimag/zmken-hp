@@ -26,23 +26,20 @@ export default function CompanyPage() {
         img="/studio/staff.jpg"
       />
 
-      {/* 理念 */}
+      {/* 理念（編集的2カラム：片側を写真背景に・フィルタで薄く） */}
       <section className="v4-sec">
-        <div className="wrap4 v4-about__grid">
-          <div className="v4-about__head">
-            <div className="v4-shead">
-              <p className="v4-eyebrow">Philosophy</p>
-              <h2 className="v4-h2">理念</h2>
-            </div>
-          </div>
-          <div className="v4-about__body">
-            <p className="v4-rinen__title">{PHILOSOPHY.rinen}</p>
+        <div className="wrap4 v4-editorial">
+          <div className="v4-editorial__body">
+            <p className="v4-eyebrow">Philosophy</p>
+            <h2 className="v4-h2">理念</h2>
+            <p className="v4-rinen__title" style={{ marginTop: "0.6em" }}>{PHILOSOPHY.rinen}</p>
             <p className="v4-rinen__body">{PHILOSOPHY.rinenBody}</p>
             <p className="v4-rinen__body">{PHILOSOPHY.visionBody}</p>
-            <figure className="v4-poster">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/studio/rinen.jpg" alt="ゼムケンサービス 理念ポスター「オモイをカタチに 建築は統合芸術」" />
-            </figure>
+          </div>
+          <div className="v4-editorial__media v4-editorial__media--soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/rinen.jpg" alt="ゼムケンサービスの理念「オモイをカタチに 建築は統合芸術」" />
+            <span className="v4-editorial__tag">Philosophy</span>
           </div>
         </div>
       </section>
