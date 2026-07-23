@@ -390,32 +390,47 @@ html:has(.v4) { scroll-behavior: smooth; }
 }
 .v4-value {
   position: relative;
-  padding: 40px 32px 44px;
+  padding: clamp(34px, 3.4vw, 52px) clamp(24px, 2.4vw, 38px) clamp(38px, 3.6vw, 54px);
   background: var(--paper);
   border: 1px solid var(--line);
+  border-radius: 5px;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
 }
-.v4-value:hover { transform: translateY(-8px); box-shadow: 0 30px 50px -34px rgba(28, 24, 21, 0.42); }
-.v4-value__num { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--accent); }
-.v4-value h3 { font-family: var(--disp); font-weight: 700; font-size: 1.34rem; margin: 0.4em 0 0.6em; }
+.v4-value::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v4-value:hover { transform: translateY(-8px); box-shadow: 0 34px 60px -36px rgba(28, 24, 21, 0.45); border-color: var(--sand); }
+.v4-value:hover::before { transform: scaleX(1); }
+.v4-value__num { display: block; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(2.6rem, 4.4vw, 3.6rem); line-height: 1; color: var(--accent); opacity: 0.9; }
+.v4-value h3 { font-family: var(--disp); font-weight: 800; font-size: clamp(1.3rem, 1.9vw, 1.55rem); letter-spacing: 0.01em; margin: 0.4em 0 0.55em; }
 .v4-value p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
-.v4-value__line { position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-.v4-value:hover .v4-value__line { transform: scaleX(1); }
+.v4-value__line { display: none; }
 
 /* =================================================================== */
 /*  WORKS                                                              */
 /* =================================================================== */
-.v4-worktags { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: clamp(52px, 7vw, 96px); }
+.v4-worktags { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); margin-bottom: clamp(52px, 7vw, 96px); }
 .v4-worktag {
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  padding: 28px 12px; background: var(--paper); border: 1px solid var(--line);
-  transition: transform 0.35s, border-color 0.35s;
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  padding: clamp(28px, 2.8vw, 42px) clamp(22px, 2.2vw, 32px);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s, border-color 0.35s;
 }
-.v4-worktag:hover { transform: translateY(-4px); border-color: var(--accent); }
-.v4-worktag__en { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--accent); }
-.v4-worktag__ja { font-family: var(--disp); font-weight: 700; font-size: 1.38rem; }
-.v4-worktag__note { font-size: 0.8rem; color: var(--muted); }
+.v4-worktag::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v4-worktag:hover { transform: translateY(-6px); box-shadow: 0 26px 48px -32px rgba(28, 24, 21, 0.42); border-color: var(--sand); }
+.v4-worktag:hover::before { transform: scaleX(1); }
+.v4-worktag__en { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1; color: var(--accent); }
+.v4-worktag__ja { font-family: var(--disp); font-weight: 800; font-size: clamp(1.3rem, 1.8vw, 1.5rem); letter-spacing: 0.01em; }
+.v4-worktag__note { font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; line-height: 1.65; margin-top: 2px; }
 
 /* 特集 */
 .v4-feat { display: flex; flex-direction: column; gap: clamp(48px, 7vw, 108px); }
@@ -527,15 +542,9 @@ html:has(.v4) { scroll-behavior: smooth; }
 /* =================================================================== */
 /*  スクロール表示アニメーション                                       */
 /* =================================================================== */
-/* 既定は表示。JS(V2Reveal)が .v4-reveal を付けて初めて「初期非表示→リビール」を有効化＝空白事故防止 */
-.v4 [data-rise] { transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-.v4-reveal .v4 [data-rise]:not(.in) { opacity: 0; transform: translateY(30px); }
-.v4 [data-rise].in { opacity: 1; transform: none; }
-
-/* 画像クリップ・リビール */
-.v4-clip { transition: clip-path 1.05s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s, transform 0.9s; }
-.v4-reveal .v4-clip:not(.in) { clip-path: inset(0 0 100% 0); }
-.v4-clip.in { clip-path: inset(0 0 0 0); }
+/* スクロールリビールは信頼性優先で無効化（コンテンツは常時表示）。data-rise/v4-clip は無害なマーカーとして残置 */
+.v4 [data-rise] { opacity: 1 !important; transform: none !important; }
+.v4-clip { clip-path: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
   .v4 [data-rise], .v4-clip { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
