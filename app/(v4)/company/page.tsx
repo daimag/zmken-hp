@@ -42,6 +42,25 @@ export default function CompanyPage() {
             <span className="v4-editorial__tag">Philosophy</span>
           </div>
         </div>
+
+        <div className="wrap4 v4-mission">
+          <div className="v4-mission__founding">
+            <p className="v4-mission__flabel">創業の精神</p>
+            <p className="v4-mission__ftitle">「{PHILOSOPHY.foundingTitle}」</p>
+            <p className="v4-mission__fbody">{PHILOSOPHY.foundingBody}</p>
+          </div>
+          <div className="v4-mission__list">
+            <h3 className="v4-mission__h">ミッションステートメント</h3>
+            <ol>
+              {PHILOSOPHY.mission.map((m, i) => (
+                <li key={i}>
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  <p>{m}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </section>
 
       {/* 代表あいさつ */}

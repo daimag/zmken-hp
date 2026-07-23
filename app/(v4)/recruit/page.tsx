@@ -7,6 +7,7 @@ import {
   RECRUIT_VOICES,
   RECRUIT_POINTS,
   RECRUIT_ROLES,
+  RECRUIT_OUTLINE,
 } from "@/components/v4/data"
 
 export const metadata: Metadata = {
@@ -98,6 +99,31 @@ export default function RecruitPage() {
               <span className="v4-worktag__note">{c.note}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 募集要項 */}
+      <section className="v4-sec">
+        <div className="wrap4 v4-shead v4-shead--center">
+          <p className="v4-eyebrow">Requirements</p>
+          <h2 className="v4-h2">募集要項</h2>
+        </div>
+        <div className="wrap4 v4-outline">
+          <table className="v4-table">
+            <tbody>
+              {RECRUIT_OUTLINE.map((r) => (
+                <tr key={r.th}>
+                  <th>{r.th}</th>
+                  <td>{r.td}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="center mt40">
+            <Link className="v4-btn v4-btn--fill" href="/contact">
+              エントリー・お問い合わせ
+            </Link>
+          </p>
         </div>
       </section>
 
