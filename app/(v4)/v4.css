@@ -1246,3 +1246,9 @@ html:has(.v4) { scroll-behavior: smooth; }
 .v4-intern-duo__item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); }
 .v4-intern-duo figcaption { text-align: left; font-size: 0.84rem; color: var(--ink-soft); margin-top: 0.7em; font-weight: 500; }
 @media (max-width: 700px) { .v4-intern-duo { grid-template-columns: 1fr; } }
+
+/* DXナレッジ(SECI)：見出しの日本語＋英語を整理、4カラムで均等配置 */
+.v4-value__ensub { display: block; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 0.82rem; color: var(--accent); margin-top: 0.3em; letter-spacing: 0.04em; }
+.v4-values--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .v4-values--4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .v4-values--4 { grid-template-columns: 1fr; } }

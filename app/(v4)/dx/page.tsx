@@ -123,15 +123,21 @@ export default function DxPage() {
             野中郁次郎氏の SECI モデルを基にした、ゼムケンサービスの DX エコシステム。現場の知恵が組織に蓄積され、また現場へ還る。
           </p>
         </div>
-        <div className="wrap4 v4-values">
-          {DX_SECI.map((v, i) => (
-            <div className="v4-value" key={v.n} style={{ transitionDelay: `${i * 90}ms` }}>
-              <span className="v4-value__num">{v.n}</span>
-              <h3>{v.t}</h3>
-              <p>{v.d}</p>
-              <span className="v4-value__line" />
-            </div>
-          ))}
+        <div className="wrap4 v4-values v4-values--4">
+          {DX_SECI.map((v, i) => {
+            const [ja, ...rest] = v.t.split(" ")
+            return (
+              <div className="v4-value" key={v.n} style={{ transitionDelay: `${i * 90}ms` }}>
+                <span className="v4-value__num">{v.n}</span>
+                <h3>
+                  {ja}
+                  {rest.length ? <span className="v4-value__ensub">{rest.join(" ")}</span> : null}
+                </h3>
+                <p>{v.d}</p>
+                <span className="v4-value__line" />
+              </div>
+            )
+          })}
         </div>
         <p className="center mt40 v4-lead" style={{ maxWidth: "42em", marginInline: "auto" }}>
           これらのツールは、早稲田大学 吉江修教授をCTOに迎えた <strong>株式会社DXB</strong> と共に開発しています。
