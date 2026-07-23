@@ -1307,3 +1307,19 @@ html:has(.v4) { scroll-behavior: smooth; }
           mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
 }
 .v4-editorial__tag { left: 40px; }
+
+/* 事例：マニュアル誌面などは全体を収めて上品に（黒フチ解消） */
+.v4-featitem__media.is-contain { background: var(--cream); }
+.v4-featitem__media.is-contain img { object-fit: contain; filter: brightness(1.04); }
+
+/* 社員集合写真：白余白の箱感をやめ、左右フェードで面に馴染ませる */
+.v4-teamband img {
+  border: none; box-shadow: none; border-radius: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+
+/* お問い合わせ：情報ブロックの副次テキストを読みやすく拡大 */
+.v4-contactinfo__hours { font-size: 1.02rem; }
+.v4-contactinfo__dl dt { font-size: 0.92rem; letter-spacing: 0.04em; }
+.v4-contactinfo__dl dd { font-size: 1.05rem; }

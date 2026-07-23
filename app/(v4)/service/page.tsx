@@ -59,7 +59,7 @@ export default function ServicePage() {
         <div className="wrap4 v4-feat">
           {BRANDING.map((b, i) => (
             <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={b.title}>
-              <div className="v4-featitem__media">
+              <div className={`v4-featitem__media${(b as { contain?: boolean }).contain ? " is-contain" : ""}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={b.img} alt={b.title} loading="lazy" />
               </div>
