@@ -20,23 +20,29 @@ export default function ServicePage() {
         img="/studio/favori-2.jpg"
       />
 
-      {/* ARCHITECTURE / 空間ブランディング */}
+      {/* ARCHITECTURE / 空間ブランディング（編集的2カラム＋写真） */}
       <section className="v4-sec">
-        <div className="wrap4 v4-shead" data-rise>
-          <span className="v4-shead__idx">Architecture</span>
-          <p className="v4-eyebrow">Space Branding</p>
-          <h2 className="v4-h2">空間ブランディング</h2>
-        </div>
-        <div className="wrap4">
-          <p className="v4-lead" style={{ maxWidth: "48em" }}>
-            {SERVICE_INTRO}
-          </p>
-          <div className="v4-chips" style={{ justifyContent: "flex-start", marginTop: "clamp(24px,3vw,40px)" }}>
-            {SERVICES.map((s) => (
-              <span className="v4-chip" key={s}>
-                {s}
-              </span>
-            ))}
+        <div className="wrap4 v4-editorial">
+          <div className="v4-editorial__body" data-rise>
+            <span className="v4-shead__idx">Architecture</span>
+            <p className="v4-eyebrow">Space Branding</p>
+            <h2 className="v4-h2">空間ブランディング</h2>
+            <p className="v4-lead" style={{ maxWidth: "34em" }}>
+              {SERVICE_INTRO}
+            </p>
+            <ol className="v4-svc-list">
+              {SERVICES.map((s, i) => (
+                <li key={s}>
+                  <span className="v4-svc-list__no">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="v4-svc-list__name">{s}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="v4-editorial__media" data-rise>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/favori-2.jpg" alt="空間ブランディングの事例｜sweets shop FAVORI PLUS 本店" />
+            <span className="v4-editorial__tag">Branding</span>
           </div>
         </div>
       </section>
