@@ -1124,3 +1124,57 @@ html:has(.v4) { scroll-behavior: smooth; }
    ============================================================ */
 .v4 main > .v4-sec:not(.v4-sec--dark) { background: #fbf6ec; }
 .v4 main > .v4-sec:not(.v4-sec--dark):nth-of-type(even) { background: var(--cream); }
+
+/* ============================================================
+   写真背景カード（価値観 / カテゴリ / DXツール）
+   ============================================================ */
+.v4-value--photo, .v4-worktag--photo {
+  position: relative;
+  background-color: #262019;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  border-color: transparent;
+  isolation: isolate; overflow: hidden;
+  min-height: clamp(210px, 20vw, 250px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.v4-value__scrim, .v4-worktag__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(20,16,13,0.12) 0%, rgba(20,16,13,0.5) 58%, rgba(20,16,13,0.84) 100%);
+}
+.v4-value--photo .v4-value__num { color: #f3c79c; opacity: 1; }
+.v4-value--photo h3 { color: #fff; }
+.v4-value--photo p { color: rgba(255,255,255,0.92); }
+.v4-worktag--photo .v4-worktag__en { color: #f3c79c; }
+.v4-worktag--photo .v4-worktag__ja { color: #fff; }
+.v4-worktag--photo .v4-worktag__note { color: rgba(255,255,255,0.9); }
+.v4-worktag--photo.v4-worktag--link::after { color: #fff; }
+.v4-worktag--photo.v4-worktag--link:hover { border-color: transparent; box-shadow: 0 26px 48px -30px rgba(0,0,0,0.6); }
+
+/* ============================================================
+   ホバーの拡大(アップ)を撤去 → 影のみ（動きなし）
+   ============================================================ */
+.v4-pcard.is-clickable:hover, .v4-tile.is-clickable:hover,
+.v4-featitem:hover .v4-featitem__media, .v4-gitem:hover { transform: none; }
+.v4-pcard.is-clickable:hover .v4-pcard__ph img,
+.v4-tile.is-clickable:hover .v4-slides img,
+.v4-featitem:hover .v4-featitem__media img,
+.v4-gitem:hover img { transform: none; }
+.v4-figure img:hover, .v4-teamband img:hover { transform: none; }
+
+/* ============================================================
+   数字スタッツ：大きく・一般的なゴシック体（非イタリック）
+   ============================================================ */
+.v4-stat__num { font-family: var(--disp); font-style: normal; font-weight: 900; font-size: clamp(4rem, 9vw, 6rem); letter-spacing: 0; }
+.v4-stat__num span { font-family: var(--disp); font-style: normal; font-weight: 800; font-size: 0.34em; color: #e7b7a6; }
+
+/* ============================================================
+   セクションの高さ（余白）を詰める
+   ============================================================ */
+.v4-sec { padding-block: clamp(56px, 7.5vw, 104px); }
+.v4-shead--center { margin-bottom: clamp(32px, 4vw, 54px); }
+
+/* ============================================================
+   沿革タイムライン：左端に張り付く不具合を修正（wrap内で左揃え）
+   ※ol から wrap4 を外し、外側の .wrap4 div で内包する前提
+   ============================================================ */
+.v4-history .v4-timeline { max-width: 820px; }

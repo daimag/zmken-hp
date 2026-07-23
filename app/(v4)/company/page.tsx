@@ -111,15 +111,17 @@ export default function CompanyPage() {
           <h2 className="v4-h2">沿革</h2>
           <p className="v4-lead">1965年の創業から、まちとともに歩んできた歩み。</p>
         </div>
-        <ol className="wrap4 v4-timeline">
-          {HISTORY.map((h) => (
-            <li className="v4-tl" key={h.year}>
-              <span className="v4-tl__year">{h.year}</span>
-              <span className="v4-tl__dot" />
-              <p className="v4-tl__text">{h.text}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="wrap4">
+          <ol className="v4-timeline">
+            {HISTORY.map((h) => (
+              <li className="v4-tl" key={h.year}>
+                <span className="v4-tl__year">{h.year}</span>
+                <span className="v4-tl__dot" />
+                <p className="v4-tl__text">{h.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* 会社概要 */}

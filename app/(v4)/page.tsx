@@ -94,11 +94,17 @@ export default function V4Home() {
         {/* 3つの価値 */}
         <div className="wrap4 v4-values">
           {[
-            { n: "01", t: "女性の視点", d: "使う人の目線で、細やかに心地よい空間を設計します。" },
-            { n: "02", t: "統合芸術", d: "デザインから施工まで一貫。ブレのない世界観をカタチに。" },
-            { n: "03", t: "地域とともに", d: "北九州・福岡から、まちを元気にするものづくりを。" },
+            { n: "01", t: "女性の視点", d: "使う人の目線で、細やかに心地よい空間を設計します。", img: "/studio/favori-2.jpg" },
+            { n: "02", t: "統合芸術", d: "デザインから施工まで一貫。ブレのない世界観をカタチに。", img: "/studio/nakasu-1.jpg" },
+            { n: "03", t: "地域とともに", d: "北九州・福岡から、まちを元気にするものづくりを。", img: "/studio/machi-uomachi.jpg" },
           ].map((v, i) => (
-            <div className="v4-value" key={v.n} data-rise style={{ transitionDelay: `${i * 110}ms` }}>
+            <div
+              className="v4-value v4-value--photo"
+              key={v.n}
+              data-rise
+              style={{ transitionDelay: `${i * 110}ms`, backgroundImage: `url(${v.img})` }}
+            >
+              <span className="v4-value__scrim" />
               <span className="v4-value__num">{v.n}</span>
               <h3>{v.t}</h3>
               <p>{v.d}</p>
@@ -121,7 +127,13 @@ export default function V4Home() {
 
         <div className="wrap4 v4-worktags">
           {WORKS_CATS.map((c) => (
-            <Link className="v4-worktag v4-worktag--link" key={c.en} href={`/works#cat=${encodeURIComponent(c.filter)}`}>
+            <Link
+              className="v4-worktag v4-worktag--link v4-worktag--photo"
+              key={c.en}
+              href={`/works#cat=${encodeURIComponent(c.filter)}`}
+              style={{ backgroundImage: `url(${c.img})` }}
+            >
+              <span className="v4-worktag__scrim" />
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>
@@ -185,7 +197,13 @@ export default function V4Home() {
 
         <div className="wrap4 v4-worktags">
           {DX_TOOLS.map((c, i) => (
-            <div className="v4-worktag" key={c.en} data-rise style={{ transitionDelay: `${i * 90}ms` }}>
+            <div
+              className="v4-worktag v4-worktag--photo"
+              key={c.en}
+              data-rise
+              style={{ transitionDelay: `${i * 90}ms`, backgroundImage: `url(${c.img})` }}
+            >
+              <span className="v4-worktag__scrim" />
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>

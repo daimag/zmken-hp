@@ -58,9 +58,9 @@ export const ALL_PHOTOS = [
 ].map((f) => `/works/${f}.jpg`)
 
 export const WORKS_CATS = [
-  { en: "Shop", ja: "店舗・商業", note: "カフェ・物販・クリニック・飲食", filter: "店舗・商業" },
-  { en: "Facility", ja: "施設・ホテル", note: "介護施設・ホテル・公共施設", filter: "施設・ホテル" },
-  { en: "House", ja: "住宅", note: "新築・リノベーション", filter: "住宅" },
+  { en: "Shop", ja: "店舗・商業", note: "カフェ・物販・クリニック・飲食", filter: "店舗・商業", img: "/studio/bonjour-1.jpg" },
+  { en: "Facility", ja: "施設・ホテル", note: "介護施設・ホテル・公共施設", filter: "施設・ホテル", img: "/studio/onkuri-1.jpg" },
+  { en: "House", ja: "住宅", note: "新築・リノベーション", filter: "住宅", img: "/studio/cream-1.jpg" },
 ]
 
 /* ---------- 施工実績：全件リスト（実データ約40件） ---------- */
@@ -213,9 +213,9 @@ export const RECRUIT_ROLES = [
 
 /* ---------- DX × ダイバーシティ ---------- */
 export const DX_TOOLS = [
-  { en: "PomPon", ja: "遠隔管理ツール", note: "現場と事務所をつなぎ、熟練者の目を遠隔で。新人も安心して働ける。" },
-  { en: "CoCREA", ja: "AIアシスタント", note: "現場の知恵をポケットに。LINEで質問、AIが即回答するナレッジ共有。" },
-  { en: "AIAR", ja: "AI＋ARツール", note: "空間をスキャンし、AR で現場に指示を重ねる“愛あるマネジメント”。" },
+  { en: "PomPon", ja: "遠隔管理ツール", note: "現場と事務所をつなぎ、熟練者の目を遠隔で。新人も安心して働ける。", img: "/studio/dx-pompon.jpg" },
+  { en: "CoCREA", ja: "AIアシスタント", note: "現場の知恵をポケットに。LINEで質問、AIが即回答するナレッジ共有。", img: "/studio/dx-cocrea.jpg" },
+  { en: "AIAR", ja: "AI＋ARツール", note: "空間をスキャンし、AR で現場に指示を重ねる“愛あるマネジメント”。", img: "/studio/dx-aiar.jpg" },
 ]
 
 export const DX_TOOLS_FULL = [
