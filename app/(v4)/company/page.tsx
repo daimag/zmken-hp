@@ -27,11 +27,11 @@ export default function CompanyPage() {
 
       {/* 理念 */}
       <section className="v4-sec">
-        <div className="wrap4 v4-shead v4-shead--center">
+        <div className="wrap4 v4-shead v4-shead--left">
           <p className="v4-eyebrow">Philosophy</p>
           <h2 className="v4-h2">理念</h2>
         </div>
-        <div className="wrap4 v4-rinen">
+        <div className="wrap4 v4-rinen v4-rinen--left">
           <p className="v4-rinen__title">{PHILOSOPHY.rinen}</p>
           <p className="v4-rinen__body">{PHILOSOPHY.rinenBody}</p>
           <p className="v4-rinen__body">{PHILOSOPHY.visionBody}</p>
@@ -44,7 +44,7 @@ export default function CompanyPage() {
 
       {/* 代表あいさつ */}
       <section className="v4-sec v4-sec--cream">
-        <div className="wrap4 v4-shead v4-shead--center">
+        <div className="wrap4 v4-shead v4-shead--left">
           <p className="v4-eyebrow">Message</p>
           <h2 className="v4-h2">代表あいさつ</h2>
         </div>
@@ -84,7 +84,7 @@ export default function CompanyPage() {
 
       {/* チーム */}
       <section className="v4-sec">
-        <div className="wrap4 v4-shead v4-shead--center">
+        <div className="wrap4 v4-shead v4-shead--left">
           <p className="v4-eyebrow">Our Team</p>
           <h2 className="v4-h2">多様な視点が、強みになる。</h2>
           <p className="v4-lead">
@@ -101,7 +101,7 @@ export default function CompanyPage() {
 
       {/* 沿革 */}
       <section className="v4-sec v4-sec--cream v4-history">
-        <div className="wrap4 v4-shead v4-shead--center">
+        <div className="wrap4 v4-shead v4-shead--left">
           <p className="v4-eyebrow">History</p>
           <h2 className="v4-h2">沿革</h2>
           <p className="v4-lead">1965年の創業から、まちとともに歩んできた歩み。</p>
@@ -119,7 +119,7 @@ export default function CompanyPage() {
 
       {/* 会社概要 */}
       <section className="v4-sec v4-company">
-        <div className="wrap4 v4-shead v4-shead--center">
+        <div className="wrap4 v4-shead v4-shead--left">
           <p className="v4-eyebrow">Company</p>
           <h2 className="v4-h2">会社概要</h2>
         </div>
