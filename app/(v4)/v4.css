@@ -1132,14 +1132,14 @@ html:has(.v4) { scroll-behavior: smooth; }
   position: relative;
   background-color: #262019;
   background-size: cover; background-position: center; background-repeat: no-repeat;
-  border-color: transparent;
+  border: none;
   isolation: isolate; overflow: hidden;
   min-height: clamp(210px, 20vw, 250px);
   display: flex; flex-direction: column; justify-content: flex-end;
 }
 .v4-value__scrim, .v4-worktag__scrim {
   position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(20,16,13,0.12) 0%, rgba(20,16,13,0.5) 58%, rgba(20,16,13,0.84) 100%);
+  background: linear-gradient(180deg, rgba(20,16,13,0) 0%, rgba(20,16,13,0.12) 42%, rgba(20,16,13,0.5) 100%);
 }
 .v4-value--photo .v4-value__num { color: #f3c79c; opacity: 1; }
 .v4-value--photo h3 { color: #fff; }
@@ -1164,8 +1164,12 @@ html:has(.v4) { scroll-behavior: smooth; }
 /* ============================================================
    数字スタッツ：大きく・一般的なゴシック体（非イタリック）
    ============================================================ */
-.v4-stat__num { font-family: var(--disp); font-style: normal; font-weight: 900; font-size: clamp(4rem, 9vw, 6rem); letter-spacing: 0; }
-.v4-stat__num span { font-family: var(--disp); font-style: normal; font-weight: 800; font-size: 0.34em; color: #e7b7a6; }
+.v4-stat__num { font-family: var(--disp); font-style: normal; font-weight: 900; font-size: clamp(5rem, 13vw, 8.5rem); letter-spacing: -0.01em; }
+.v4-stat__num span { font-family: var(--disp); font-style: normal; font-weight: 800; font-size: 0.3em; color: #e7b7a6; }
+
+/* TOPお知らせ：縦の場所を詰める（行間・上下） */
+.v4-newsitem { padding-block: 15px; }
+.v4-news .v4-shead--center { margin-bottom: clamp(22px, 2.6vw, 34px); }
 
 /* ============================================================
    セクションの高さ（余白）を詰める

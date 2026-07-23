@@ -3,19 +3,14 @@ import V4HeroSlides from "@/components/v4/V4HeroSlides"
 import V4JsonLd from "@/components/v4/V4JsonLd"
 import V4CountUp from "@/components/v4/V4CountUp"
 import {
-  NEWS,
   FEATURED,
   GRID_WORKS,
   WORKS_CATS,
   DX_TOOLS,
   RECRUIT_STATS,
-  COMPANY_ROWS,
-  MAP_SRC,
 } from "@/components/v4/data"
 
 export default function V4Home() {
-  const news = NEWS.slice(0, 4)
-
   return (
     <>
       <V4JsonLd />
@@ -256,70 +251,6 @@ export default function V4Home() {
         <p className="center mt40" data-rise>
           <Link className="v4-btn v4-btn--fill" href="/recruit">
             採用情報・インターンシップ
-          </Link>
-        </p>
-      </section>
-
-      {/* ============ NEWS（プレビュー） ============ */}
-      <section id="news" className="v4-sec v4-sec--cream v4-news">
-        <div className="wrap4 v4-shead v4-shead--center" data-rise>
-          <span className="v4-shead__idx">05</span>
-          <p className="v4-eyebrow">News</p>
-          <h2 className="v4-h2">お知らせ</h2>
-        </div>
-        <div className="wrap4 v4-newslist">
-          {news.map((n, i) => (
-            <a className="v4-newsitem" href={n.href} target="_blank" rel="noopener noreferrer" key={i} data-rise style={{ transitionDelay: `${i * 70}ms` }}>
-              <span className="v4-newsitem__date">{n.date}</span>
-              <span className={`v4-newsitem__tag${n.tag === "メディア掲載" ? " v4-newsitem__tag--media" : ""}`}>
-                {n.tag}
-              </span>
-              <span className="v4-newsitem__text">{n.text}</span>
-              <span className="v4-newsitem__arrow" aria-hidden>
-                ↗
-              </span>
-            </a>
-          ))}
-        </div>
-        <p className="center mt40" data-rise>
-          <Link className="v4-btn v4-btn--line" href="/news">
-            お知らせ一覧
-          </Link>
-        </p>
-      </section>
-
-      {/* ============ COMPANY（概要） ============ */}
-      <section id="company" className="v4-sec v4-company">
-        <div className="wrap4 v4-shead v4-shead--center" data-rise>
-          <span className="v4-shead__idx">06</span>
-          <p className="v4-eyebrow">Company</p>
-          <h2 className="v4-h2">会社概要</h2>
-        </div>
-        <div className="wrap4 v4-company__grid" data-rise>
-          <table className="v4-table">
-            <tbody>
-              {COMPANY_ROWS.map((r) => (
-                <tr key={r.th}>
-                  <th>{r.th}</th>
-                  <td>{r.td}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="v4-map">
-            <iframe
-              className="v4-map__frame"
-              src={MAP_SRC}
-              title="有限会社ゼムケンサービス 所在地マップ"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
-        </div>
-        <p className="center mt40" data-rise>
-          <Link className="v4-textlink" href="/company">
-            会社情報を詳しく見る
           </Link>
         </p>
       </section>
