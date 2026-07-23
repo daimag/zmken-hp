@@ -16,18 +16,27 @@ export default function DxPage() {
         en="DX × Diversity"
         title="建設業を、民主化する。"
         lead="誰もが建設業で活躍できるように。ゼムケンサービスは、現場を支える3つのデジタルツールを自社開発しています。"
-        img="/studio/dx-future.jpg"
+        img="/studio/recruit-bim.jpg"
       />
 
-      {/* 私たちの考え（DX×ダイバーシティの理由） */}
+      {/* 私たちの考え（DX×ダイバーシティの理由）＝編集的2カラム＋写真 */}
       <section className="v4-sec">
-        <div className="wrap4 v4-rinen">
-          <p className="v4-eyebrow v4-eyebrow--center">Our Belief</p>
-          <p className="v4-rinen__title">テクノロジーで、誰もが輝ける現場へ。</p>
-          <p className="v4-rinen__body">
-            棟梁の娘として、建築士として、そして経営者として。私たちは伝統ある建設業を、もっとオープンで革新的な産業に変えていきます。デジタルの力で、性別・国籍・年齢・経験の有無を問わず、誰もが自分らしく活躍できる現場をつくる——それが私たちの考える「建設業の民主化」です。
-          </p>
-          <p className="v4-dx-statement">DEMOCRATIZING CONSTRUCTION FOR ALL</p>
+        <div className="wrap4 v4-editorial">
+          <div className="v4-editorial__body">
+            <p className="v4-eyebrow">Our Belief</p>
+            <h2 className="v4-h2">テクノロジーで、誰もが輝ける現場へ。</h2>
+            <p className="v4-lead" style={{ maxWidth: "34em" }}>
+              棟梁の娘として、建築士として、そして経営者として。私たちは伝統ある建設業を、もっとオープンで革新的な産業に変えていきます。デジタルの力で、性別・国籍・年齢・経験の有無を問わず、誰もが自分らしく活躍できる現場をつくる——それが私たちの考える「建設業の民主化」です。
+            </p>
+            <p className="v4-dx-statement" style={{ textAlign: "left", marginInline: 0, fontSize: "clamp(1.1rem,2vw,1.6rem)" }}>
+              DEMOCRATIZING CONSTRUCTION FOR ALL
+            </p>
+          </div>
+          <div className="v4-editorial__media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/recruit-group.jpg" alt="デジタルの力で誰もが活躍できる現場へ｜多様なメンバー" />
+            <span className="v4-editorial__tag">Belief</span>
+          </div>
         </div>
       </section>
 

@@ -45,7 +45,7 @@ export default function RecruitPage() {
           <p className="v4-eyebrow">Our Environment</p>
           <h2 className="v4-h2">ゼムケンで働く、4つの魅力</h2>
         </div>
-        <div className="wrap4 v4-values">
+        <div className="wrap4 v4-values v4-values--2x2">
           {RECRUIT_POINTS.map((v, i) => (
             <div className="v4-value" key={v.n} style={{ transitionDelay: `${i * 90}ms` }}>
               <span className="v4-value__num">{v.n}</span>
@@ -134,17 +134,13 @@ export default function RecruitPage() {
           </p>
         </div>
 
-        {/* 集合写真 */}
-        <div className="wrap4 v4-intern-group">
-          <figure>
+        {/* 集合写真＋メディア掲載（2カラムで圧縮） */}
+        <div className="wrap4 v4-intern-duo">
+          <figure className="v4-intern-duo__item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/studio/recruit-group.jpg" alt="ゼムケンサービスのインターン生と代表・スタッフ" loading="lazy" />
           </figure>
-        </div>
-
-        {/* メディア掲載 */}
-        <div className="wrap4 v4-intern-media">
-          <figure>
+          <figure className="v4-intern-duo__item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/studio/recruit-media.jpg" alt="「商業施設」2024年10月号 インターンシップ紹介" loading="lazy" />
             <figcaption>「商業施設」2024.10 にて、弊社インターンシップの取り組みが紹介されました。</figcaption>

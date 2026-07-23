@@ -1226,3 +1226,23 @@ html:has(.v4) { scroll-behavior: smooth; }
   .v4-editorial__media { order: -1; aspect-ratio: 4 / 3; }
   .v4-editorial__body { max-width: none; }
 }
+
+/* ============================================================
+   たてなが/バランス一括修正
+   ============================================================ */
+/* 採用「4つの魅力」＝2×2 */
+.v4-values--2x2 { grid-template-columns: repeat(2, 1fr); max-width: 940px; margin-inline: auto; }
+@media (max-width: 640px) { .v4-values--2x2 { grid-template-columns: 1fr; } }
+
+/* 先輩の声：空の photo プレースホルダをやめ、引用カードに */
+.v4-voice { grid-template-columns: 1fr; }
+.v4-voice__media { display: none; }
+.v4-voice figcaption { padding: clamp(30px, 3.2vw, 46px); }
+.v4-voice__quote { font-size: 3.4rem; color: #f3c79c; opacity: 0.45; }
+
+/* インターン：集合＋メディア掲載を2カラムに圧縮 */
+.v4-intern-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 30px); align-items: start; margin-top: clamp(26px, 3.5vw, 46px); }
+.v4-intern-duo__item { margin: 0; }
+.v4-intern-duo__item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); }
+.v4-intern-duo figcaption { text-align: left; font-size: 0.84rem; color: var(--ink-soft); margin-top: 0.7em; font-weight: 500; }
+@media (max-width: 700px) { .v4-intern-duo { grid-template-columns: 1fr; } }
