@@ -20,6 +20,13 @@ export default function V4WorkCatalog({
   const imgs = cur?.imgs ?? []
   const close = useCallback(() => setCur(null), [])
 
+  // URLハッシュ #cat=... で初期フィルタを指定（TOPのカテゴリから遷移時に使用）
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = decodeURIComponent(window.location.hash).match(/cat=(.+)$/)
+    if (m && (WORK_FILTERS as readonly string[]).includes(m[1])) setFilter(m[1])
+  }, [])
+
   useEffect(() => {
     if (!cur) return
     setIdx(0)

@@ -426,24 +426,36 @@ html:has(.v4) { scroll-behavior: smooth; }
 /*  WORKS                                                              */
 /* =================================================================== */
 .v4-worktags { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); margin-bottom: clamp(52px, 7vw, 96px); }
+/* 既定＝落ち着いた情報表示（ボタンに見せない：浮かない・アクセント帯なし） */
 .v4-worktag {
   position: relative;
   display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
-  padding: clamp(28px, 2.8vw, 42px) clamp(22px, 2.2vw, 32px);
-  background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: clamp(26px, 2.6vw, 38px) clamp(22px, 2.2vw, 32px);
+  background: transparent; border: 1px solid var(--line); border-radius: 5px;
   overflow: hidden;
+}
+.v4-worktag__en { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1; color: var(--accent); }
+.v4-worktag__ja { font-family: var(--disp); font-weight: 800; font-size: clamp(1.3rem, 1.8vw, 1.5rem); letter-spacing: 0.01em; }
+.v4-worktag__note { font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; line-height: 1.65; margin-top: 2px; }
+
+/* リンクの場合のみインタラクティブ（本当に遷移する＝装飾に意味） */
+.v4-worktag--link {
+  background: var(--paper); cursor: pointer;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s, border-color 0.35s;
 }
-.v4-worktag::before {
+.v4-worktag--link::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: var(--accent); transform: scaleX(0); transform-origin: left;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.v4-worktag:hover { transform: translateY(-6px); box-shadow: 0 26px 48px -32px rgba(28, 24, 21, 0.42); border-color: var(--sand); }
-.v4-worktag:hover::before { transform: scaleX(1); }
-.v4-worktag__en { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1; color: var(--accent); }
-.v4-worktag__ja { font-family: var(--disp); font-weight: 800; font-size: clamp(1.3rem, 1.8vw, 1.5rem); letter-spacing: 0.01em; }
-.v4-worktag__note { font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; line-height: 1.65; margin-top: 2px; }
+.v4-worktag--link::after {
+  content: "→"; position: absolute; right: clamp(18px, 2vw, 28px); bottom: clamp(16px, 1.8vw, 24px);
+  font-family: var(--disp); font-weight: 700; color: var(--accent);
+  opacity: 0; transform: translateX(-6px); transition: opacity 0.3s, transform 0.3s;
+}
+.v4-worktag--link:hover { transform: translateY(-6px); box-shadow: 0 26px 48px -32px rgba(28, 24, 21, 0.42); border-color: var(--sand); }
+.v4-worktag--link:hover::before { transform: scaleX(1); }
+.v4-worktag--link:hover::after { opacity: 1; transform: none; }
 
 /* 特集 */
 .v4-feat { display: flex; flex-direction: column; gap: clamp(48px, 7vw, 108px); }

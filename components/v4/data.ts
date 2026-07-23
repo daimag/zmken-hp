@@ -58,9 +58,9 @@ export const ALL_PHOTOS = [
 ].map((f) => `/works/${f}.jpg`)
 
 export const WORKS_CATS = [
-  { en: "Shop", ja: "店舗", note: "カフェ・物販・クリニック" },
-  { en: "House", ja: "住宅", note: "新築・リノベーション" },
-  { en: "Office", ja: "オフィス", note: "働く場の空間設計" },
+  { en: "Shop", ja: "店舗・商業", note: "カフェ・物販・クリニック・飲食", filter: "店舗・商業" },
+  { en: "Facility", ja: "施設・ホテル", note: "介護施設・ホテル・公共施設", filter: "施設・ホテル" },
+  { en: "House", ja: "住宅", note: "新築・リノベーション", filter: "住宅" },
 ]
 
 /* ---------- 施工実績：全件リスト（実データ約40件） ---------- */

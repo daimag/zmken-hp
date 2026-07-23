@@ -120,12 +120,12 @@ export default function V4Home() {
         </div>
 
         <div className="wrap4 v4-worktags">
-          {WORKS_CATS.map((c, i) => (
-            <div className="v4-worktag" key={c.en} data-rise style={{ transitionDelay: `${i * 90}ms` }}>
+          {WORKS_CATS.map((c) => (
+            <Link className="v4-worktag v4-worktag--link" key={c.en} href={`/works#cat=${encodeURIComponent(c.filter)}`}>
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>
-            </div>
+            </Link>
           ))}
         </div>
 
