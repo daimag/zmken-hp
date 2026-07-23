@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 
 const NAV = [
   { label: "会社情報", en: "Company", href: "/company" },
+  { label: "事業内容", en: "Service", href: "/service" },
   { label: "施工実績", en: "Works", href: "/works" },
   { label: "DX×多様性", en: "DX", href: "/dx" },
   { label: "採用情報", en: "Recruit", href: "/recruit" },

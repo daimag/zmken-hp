@@ -6,7 +6,6 @@ import {
   HISTORY,
   COMPANY_ROWS,
   MAP_SRC,
-  SERVICES,
   QUALIFICATIONS,
 } from "@/components/v4/data"
 
@@ -100,28 +99,8 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      {/* 事業内容 */}
-      <section className="v4-sec v4-sec--cream">
-        <div className="wrap4 v4-shead v4-shead--center">
-          <p className="v4-eyebrow">Service</p>
-          <h2 className="v4-h2">事業内容</h2>
-          <p className="v4-lead">
-            企画・設計から施工、ブランディングまで。女性視点の空間づくりを一貫して手がけます。
-          </p>
-        </div>
-        <div className="wrap4">
-          <div className="v4-chips">
-            {SERVICES.map((s) => (
-              <span className="v4-chip" key={s}>
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 沿革 */}
-      <section className="v4-sec v4-history">
+      <section className="v4-sec v4-sec--cream v4-history">
         <div className="wrap4 v4-shead v4-shead--center">
           <p className="v4-eyebrow">History</p>
           <h2 className="v4-h2">沿革</h2>
@@ -139,7 +118,7 @@ export default function CompanyPage() {
       </section>
 
       {/* 会社概要 */}
-      <section className="v4-sec v4-sec--cream v4-company">
+      <section className="v4-sec v4-company">
         <div className="wrap4 v4-shead v4-shead--center">
           <p className="v4-eyebrow">Company</p>
           <h2 className="v4-h2">会社概要</h2>

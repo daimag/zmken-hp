@@ -26,6 +26,7 @@ export default function DxPage() {
           <p className="v4-rinen__body">
             棟梁の娘として、建築士として、そして経営者として。私たちは伝統ある建設業を、もっとオープンで革新的な産業に変えていきます。デジタルの力で、性別・国籍・年齢・経験の有無を問わず、誰もが自分らしく活躍できる現場をつくる——それが私たちの考える「建設業の民主化」です。
           </p>
+          <p className="v4-dx-statement">DEMOCRATIZING CONSTRUCTION FOR ALL</p>
         </div>
       </section>
 

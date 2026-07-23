@@ -131,7 +131,7 @@ export default function V4Home() {
         <div className="wrap4 v4-feat">
           {FEATURED.map((w, i) => (
             <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={w.title} data-rise>
-              <Link className="v4-featitem__media v4-clip" href="/works" data-rise>
+              <Link className="v4-featitem__media" href="/works">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={w.img} alt={w.title} />
               </Link>
@@ -154,7 +154,7 @@ export default function V4Home() {
 
         <div className="wrap4 v4-grid8">
           {GRID_WORKS.map((src, i) => (
-            <Link className="v4-gitem v4-clip" href="/works" key={src} data-rise style={{ transitionDelay: `${i * 60}ms` }}>
+            <Link className="v4-gitem" href="/works" key={src}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={src} alt={`ゼムケンサービスの施工実績 ${String(i + 1).padStart(2, "0")}｜北九州の店舗・住宅デザイン`} loading="lazy" />
               <span className="v4-gitem__cap">Works {String(i + 3).padStart(2, "0")}</span>
@@ -202,7 +202,7 @@ export default function V4Home() {
       {/* ============ RECRUIT（プレビュー） ============ */}
       <section id="recruit" className="v4-sec v4-recruit">
         <div className="v4-recruit__hero">
-          <div className="v4-recruit__media v4-clip" data-rise>
+          <div className="v4-recruit__media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/works/k_11.jpg" alt="ゼムケンサービスで働く" />
           </div>

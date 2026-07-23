@@ -105,14 +105,48 @@ export default function RecruitPage() {
         </div>
         <div className="wrap4 v4-message">
           <p>
-            「建設業を、もっとオープンに」。その想いは、国内だけでなく世界へも向けられています。弊社では2024年からミャンマーのトップIT大学であるUITと提携し、グローバルインターンシップを実施しています。
+            「建設業を、もっとオープンに」。その想いは、国内だけでなく世界へも向けられています。弊社では2024年からミャンマーのトップIT大学である UIT と提携し、グローバルインターンシップを実施しています。
           </p>
+        </div>
+
+        {/* 現場＆BIM の写真 */}
+        <div className="wrap4 v4-intern-photos">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/recruit-work.jpg" alt="現場でものづくりを学ぶインターン生" loading="lazy" />
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/recruit-bim.jpg" alt="BIMを学ぶミャンマーUITのインターン生" loading="lazy" />
+          </figure>
+        </div>
+
+        <div className="wrap4 v4-message">
+          <h3 className="v4-intern-sub">違いを強みに変える、2ヶ月間</h3>
           <p>
-            インターン生たちは約2ヶ月間、日本で生活しながら建築と最先端のBIM技術を学びます。文化や言葉の壁に直面することもありますが、彼らの「学びたい」という強い意欲と、チーム全員でのサポートがあれば、その壁は乗り越えられます。むしろそのプロセスこそが、多様な価値観を認め合う私たちの強みとなっています。
+            インターン生たちは約2ヶ月間、日本で生活しながら建築と最先端の BIM 技術を学びます。文化や言葉の壁に直面することもありますが、彼らの「学びたい」という強い意欲と、チーム全員でのサポートがあれば、その壁は乗り越えられます。むしろそのプロセスこそが、多様な価値観を認め合う私たちの強みとなっています。
           </p>
+          <h3 className="v4-intern-sub">インターンから、かけがえのない仲間へ</h3>
           <p>
-            2024年にインターンシップに参加した1名が、2025年に正式に社員として入社しました。2025年にはUITの学生4名、北九州市立大学の留学生1名がインターンシップに参加。国籍やバックグラウンドに関わらず、意欲ある人材がプロフェッショナルとして輝けるフィールドがあります。
+            2024年にインターンシップに参加した1名が、2025年に正式にゼムケンサービスの社員として入社しました。2025年には UIT の学生4名、北九州市立大学の留学生1名がインターンシップに参加。国籍やバックグラウンドに関わらず、意欲ある人材がプロフェッショナルとして輝けるフィールドがあります。
           </p>
+        </div>
+
+        {/* 集合写真 */}
+        <div className="wrap4 v4-intern-group">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/recruit-group.jpg" alt="ゼムケンサービスのインターン生と代表・スタッフ" loading="lazy" />
+          </figure>
+        </div>
+
+        {/* メディア掲載 */}
+        <div className="wrap4 v4-intern-media">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/studio/recruit-media.jpg" alt="「商業施設」2024年10月号 インターンシップ紹介" loading="lazy" />
+            <figcaption>「商業施設」2024.10 にて、弊社インターンシップの取り組みが紹介されました。</figcaption>
+          </figure>
         </div>
 
         <p className="center mt40">

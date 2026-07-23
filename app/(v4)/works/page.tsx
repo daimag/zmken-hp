@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import V4PageHero from "@/components/v4/V4PageHero"
 import V4WorkCatalog from "@/components/v4/V4WorkCatalog"
-import { FEATURED, WORKS_ALL, BRANDING, SEMINARS } from "@/components/v4/data"
+import { FEATURED, WORKS_ALL, SEMINARS } from "@/components/v4/data"
 
 export const metadata: Metadata = {
   title: "施工実績",
@@ -45,36 +45,8 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* 空間ブランディング（La Chic） */}
-      <section className="v4-sec v4-sec--cream">
-        <div className="wrap4 v4-shead v4-shead--center">
-          <p className="v4-eyebrow">Branding — La Chic</p>
-          <h2 className="v4-h2">女性視点の空間ブランディング</h2>
-          <p className="v4-lead">
-            お客さまの歴史や想いを読み解き、五感で心地よさを設計する。&ldquo;その人らしさ&rdquo;をカタチにするブランディング事例です。
-          </p>
-        </div>
-        <div className="wrap4 v4-feat">
-          {BRANDING.map((b, i) => (
-            <article className={`v4-featitem ${i % 2 ? "is-rev" : ""}`} key={b.title}>
-              <div className="v4-featitem__media">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.img} alt={b.title} loading="lazy" />
-              </div>
-              <div className="v4-featitem__body">
-                <p className="v4-featitem__meta">
-                  <span className="v4-featitem__cat">{b.en}</span>
-                </p>
-                <h3 className="v4-featitem__title">{b.title}</h3>
-                <p className="v4-featitem__text">{b.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       {/* 事例カタログ */}
-      <section className="v4-sec">
+      <section className="v4-sec v4-sec--cream">
         <div className="wrap4 v4-shead v4-shead--center">
           <span className="v4-shead__idx">List</span>
           <p className="v4-eyebrow">Project List</p>
@@ -92,7 +64,7 @@ export default function WorksPage() {
       </section>
 
       {/* セミナー・WORKSHOP／まちづくり */}
-      <section className="v4-sec v4-sec--cream">
+      <section className="v4-sec">
         <div className="wrap4 v4-shead v4-shead--center">
           <p className="v4-eyebrow">Seminar / Machizukuri</p>
           <h2 className="v4-h2">セミナー・まちづくり</h2>

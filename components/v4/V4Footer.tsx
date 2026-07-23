@@ -1,5 +1,6 @@
 const FOOT_NAV = [
   { label: "会社情報", href: "/company" },
+  { label: "事業内容", href: "/service" },
   { label: "施工実績", href: "/works" },
   { label: "DX×多様性", href: "/dx" },
   { label: "採用情報", href: "/recruit" },
