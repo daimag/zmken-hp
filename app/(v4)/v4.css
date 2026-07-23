@@ -1252,3 +1252,6 @@ html:has(.v4) { scroll-behavior: smooth; }
 .v4-values--4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 900px) { .v4-values--4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .v4-values--4 { grid-template-columns: 1fr; } }
+
+/* お知らせ一覧：横広がりを抑えて中央に締める */
+.v4-news .v4-newslist { max-width: 940px; margin-inline: auto; }
