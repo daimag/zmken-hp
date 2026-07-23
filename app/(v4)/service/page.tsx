@@ -64,6 +64,9 @@ export default function ServicePage() {
                 <img src={b.img} alt={b.title} loading="lazy" />
               </div>
               <div className="v4-featitem__body">
+                <span className="v4-featitem__no">
+                  Case<em>{String(i + 1).padStart(2, "0")}</em>
+                </span>
                 <p className="v4-featitem__meta">
                   <span className="v4-featitem__cat">{b.en}</span>
                 </p>
