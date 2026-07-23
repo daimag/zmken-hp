@@ -59,7 +59,7 @@ export const ALL_PHOTOS = [
 
 export const WORKS_CATS = [
   { en: "Shop", ja: "店舗・商業", note: "カフェ・物販・クリニック・飲食", filter: "店舗・商業", img: "/studio/bonjour-1.jpg" },
-  { en: "Facility", ja: "施設・ホテル", note: "介護施設・ホテル・公共施設", filter: "施設・ホテル", img: "/studio/onkuri-1.jpg" },
+  { en: "Facility", ja: "施設・ホテル", note: "介護施設・ホテル・公共施設", filter: "施設・ホテル", img: "/studio/tetra-1.jpg" },
   { en: "House", ja: "住宅", note: "新築・リノベーション", filter: "住宅", img: "/studio/cream-1.jpg" },
 ]
 

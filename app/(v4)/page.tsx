@@ -192,13 +192,7 @@ export default function V4Home() {
 
         <div className="wrap4 v4-worktags">
           {DX_TOOLS.map((c, i) => (
-            <div
-              className="v4-worktag v4-worktag--photo"
-              key={c.en}
-              data-rise
-              style={{ transitionDelay: `${i * 90}ms`, backgroundImage: `url(${c.img})` }}
-            >
-              <span className="v4-worktag__scrim" />
+            <div className="v4-worktag v4-worktag--dx" key={c.en} data-rise style={{ transitionDelay: `${i * 90}ms` }}>
               <span className="v4-worktag__en">{c.en}</span>
               <span className="v4-worktag__ja">{c.ja}</span>
               <span className="v4-worktag__note">{c.note}</span>
